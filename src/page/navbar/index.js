@@ -18,7 +18,7 @@ function Navbar() {
 
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav mr-auto">
-      <li className="nav-item"><Link className="nav-link ml-2" to="#">Home </Link></li>
+      <li className="nav-item"><Link className="nav-link ml-2" to="/">Home </Link></li>
 
       {
       useSelector( state => state.usuarioLogado) > 0 ?
