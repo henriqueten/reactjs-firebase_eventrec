@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './usuario-recuperar-senha.css';
-import Navbar from '../../../components/navbar';
+import Navbar from '../../navbar';
 
 import firebase from '../../../firebase';
 import 'firebase/auth'

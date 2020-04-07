@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import firebase from '../../../firebase';
 import 'firebase/auth'
-import Navbar from '../../../components/navbar';
+import Navbar from '../../navbar';
 
 import './usuario-novo.css'
 
