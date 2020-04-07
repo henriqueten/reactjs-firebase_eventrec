@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {useSelector} from 'react-redux'; 
 import './evento-cadastro.css';
 import {Link} from 'react-router-dom';
-import Navbar from '../../components/navbar/';
+import Navbar from '../../components/navbar';
 
 import firebase from '../../firebase';
 
