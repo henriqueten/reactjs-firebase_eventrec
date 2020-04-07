@@ -3,7 +3,7 @@ import './home.css';
 import {Link} from 'react-router-dom';
 import Navbar from '../../components/navbar/';
 import { useSelector } from 'react-redux';
-import firebase from '../../config/firebase'
+import firebase from '../../firebase'
 import EventoCard from '../../components/evento-card/';
 
 function Home(){

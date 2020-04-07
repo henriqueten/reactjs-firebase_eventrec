@@ -4,7 +4,7 @@ import store from '../src/store/';
 import { Provider } from 'react-redux';
 
 /*Paginas*/
-import Login from './view/login/';
+import Login from './page/login';
 import NovoUsuario from './view/usuario-novo/';
 import Home from './view/home/';
 import UsuarioRecuperarSenha from './view/usuario-recuperar-senha/';

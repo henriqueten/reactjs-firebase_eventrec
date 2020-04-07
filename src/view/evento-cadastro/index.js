@@ -4,7 +4,7 @@ import './evento-cadastro.css';
 import {Link} from 'react-router-dom';
 import Navbar from '../../components/navbar/';
 
-import firebase from '../../config/firebase';
+import firebase from '../../firebase';
 
 function EventoCadastro() {
     const [carregando, setCarregando] = useState();
