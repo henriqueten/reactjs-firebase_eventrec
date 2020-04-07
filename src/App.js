@@ -5,9 +5,9 @@ import { Provider } from 'react-redux';
 
 /*Paginas*/
 import Login from './page/login';
-import NovoUsuario from './view/usuario-novo/';
+import NovoUsuario from './page/login/usuario-novo';
 import Home from './view/home/';
-import UsuarioRecuperarSenha from './view/usuario-recuperar-senha/';
+import UsuarioRecuperarSenha from './page/login/usuario-recuperar-senha';
 import EventoCadastro from './view/evento-cadastro/';
 
 function App() {
