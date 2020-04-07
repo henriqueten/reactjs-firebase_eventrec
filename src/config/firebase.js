@@ -1,6 +1,6 @@
 import firebase from 'firebase';
 
-
+/*
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_apiKey,
@@ -12,7 +12,17 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_appId,
   measurementId: process.env.REACT_APP_measurementId
 };
-
+*/
+const firebaseConfig = {
+  apiKey: "AIzaSyDQB1PHpc4lgVzXGakNqkFFzkAiXlkGhng",
+  authDomain: "eventrec-4bfbc.firebaseapp.com",
+  databaseURL: "https://eventrec-4bfbc.firebaseio.com",
+  projectId: "eventrec-4bfbc",
+  storageBucket: "eventrec-4bfbc.appspot.com",
+  messagingSenderId: "45739327742",
+  appId: "1:45739327742:web:6e105ef6554ff7544765af",
+  measurementId: "G-2N9ZG7006Y"
+};
 
 
 
