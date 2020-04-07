@@ -54,9 +54,9 @@ function logar(){
             </div>
 
             <div className="opcoes-login mt-5 text-center">
-              <Link to="usuariorecuperarsenha" className="mx-2">Recuperar Senha</Link>
+              <Link to="/usuario/recupera" className="mx-2">Recuperar Senha</Link>
               <span className="text-white">&#9733;</span>
-              <Link to='novousuario' className="mx-2">Cadastrar Senha</Link>
+              <Link to='/usuario/novo' className="mx-2">Cadastrar Senha</Link>
             </div>
         </form>
     </div>
