@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import './evento-cadastro.css';
-import Navbar from '../navbar';
-
-
 import { Form, Card } from "react-bootstrap";
 
+import Navbar from '../navbar';
 import firebase from '../../firebase';
+
+import "./styles.css";
+
 
 function EventoCadastro() {
     const [carregando, setCarregando] = useState();
@@ -58,18 +58,47 @@ function EventoCadastro() {
 
           <Form>
               <Card className="containerCard" >
-                  <Card.Header>
-                      <Card.Title>Novo Eventos</Card.Title>
+                  <Card.Header >
+                      <Card.Title className="positionTitle">Novo Eventos</Card.Title>
                   </Card.Header>
                   <Card.Body>
+
                       <Form.Row>
-                          <Form.Group>
-                              <Form.Label></Form.Label>
-                              <Form.Control></Form.Control>
+                          <Form.Group className="col-md-6">
+                              <Form.Label>Título</Form.Label>
+                              <Form.Control placeholder="Informe um título"/>
+                          </Form.Group>
+
+                          <Form.Group className="col-md-6">
+                              <Form.Label>Tipo do Evento</Form.Label>
+                              <Form.Control as="select" ></Form.Control>
+                          </Form.Group>
+
+                          <Form.Group className="col-md-12">
+                              <Form.Label>Descrição do Evento</Form.Label>
+                              <Form.Control as="textarea" ></Form.Control>
+                          </Form.Group>
+
+                          <Form.Group className="col-md-6">
+                              <Form.Label>Tipo do Evento</Form.Label>
+                              <Form.Control type="date" ></Form.Control>
+                          </Form.Group>
+
+                          <Form.Group className="col-md-6">
+                              <Form.Label>Tipo do Evento</Form.Label>
+                              <Form.Control type="time" ></Form.Control>
+                          </Form.Group>
+
+                          <Form.Group className="col-md-6">
+                              <Form.Label>Folder do Evento</Form.Label>
+                              <Form.Control className="inputBord" type="file" ></Form.Control>
                           </Form.Group>
                       </Form.Row>
                   </Card.Body>
+
+                  
               </Card>
+              
           </Form>
 
                         <div className="col-12 mt-5">
