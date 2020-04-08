@@ -47,9 +47,9 @@ function logar(){
             <button onClick={logar} class="btn btn-lg btn-block btn-login" type="button">Logar</button>
 
             <div className="msg-login text-white text-center my-5">
-                 { msgTipo == 'Sucesso' && <span><strong>WoW!</strong> Você está conectado &#128526;</span> }
+                 { msgTipo === 'Sucesso' && <span><strong>WoW!</strong> Você está conectado &#128526;</span> }
                     
-                 { msgTipo == 'Erro' && <span><strong>Ops!</strong> Verifique se a senha ou usuário estão corretos &#128546;</span> }
+                 { msgTipo === 'Erro' && <span><strong>Ops!</strong> Verifique se a senha ou usuário estão corretos &#128546;</span> }
                 
             </div>
 

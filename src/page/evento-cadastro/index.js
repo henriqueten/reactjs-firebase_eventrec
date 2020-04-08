@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import {useSelector} from 'react-redux'; 
 import './evento-cadastro.css';
-import {Link} from 'react-router-dom';
 import Navbar from '../navbar';
 
 import firebase from '../../firebase';
@@ -105,9 +104,9 @@ function EventoCadastro() {
             </form>
 
             <div className="msg-login  text-center mt-2">
-                 { msgTipo == 'Sucesso' && <span><strong>WoW!</strong> Evento Publicado! &#128526;</span> }
+                 { msgTipo === 'Sucesso' && <span><strong>WoW!</strong> Evento Publicado! &#128526;</span> }
                     
-                 { msgTipo == 'Erro' && <span><strong>Ops!</strong> Não foi possível publicar o Evento &#128546;</span> }
+                 { msgTipo === 'Erro' && <span><strong>Ops!</strong> Não foi possível publicar o Evento &#128546;</span> }
                 
             </div>
 
