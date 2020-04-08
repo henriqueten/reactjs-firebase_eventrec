@@ -48,7 +48,7 @@ function Navbar() {
                 <li className="nav-item">
                   <Link
                     className="nav-link"
-                    to="">
+                    to="/meuevento">
                     Meus Eventos
                   </Link>
                 </li>
