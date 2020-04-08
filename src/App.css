@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    margin: 20px;
+    background: #eaeef5 !important;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  #app {
+    
+    margin: 0 auto;
+    padding: 60px 30px;
+  
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
