@@ -24,3 +24,9 @@
     align-items: flex-start;
   }
   
+
+
+  .containerCard {
+    display: flex;
+    margin: 20px;
+  }
