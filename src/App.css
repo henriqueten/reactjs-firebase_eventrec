@@ -10,7 +10,7 @@
     height: 100%;
   }
   body {
-    background: #eaeef5 !important;
+    background: rgb(251, 252, 244);
     -webkit-font-smoothing: antialiased;
   }
   

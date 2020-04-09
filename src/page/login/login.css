@@ -2,15 +2,16 @@
     width: 100%;
     padding: 15%;
     margin: auto;
-    background-color: #614ea6;
+    background:  linear-gradient( 0deg, orange, rgb(247, 212, 56));
     height: 100wh;
 }
 .btn-login{
-    background-color: #fff;
-    color: #614ea6;
+    background-color: rgb(255, 145, 0);
+    color: rgb(43, 23, 1);
+    font-weight: bold;
 }
 .btn-login:hover{
-    background-color: #f21667;
+    background-color: #f26716;
     color: #fff;
 }
 
