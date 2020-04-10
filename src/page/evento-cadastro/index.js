@@ -143,7 +143,7 @@ function EventoCadastro() {
 
 
 
-
+{/** 
             <div className="col-12 mt-5">
                 <div className="row">
                     <h3 className="mx-auto font-weight-bold">Novo Eventos</h3>
@@ -205,7 +205,7 @@ function EventoCadastro() {
 
                 </div>
 
-            </div>
+            </div>*/}
         </>
     )
 }
