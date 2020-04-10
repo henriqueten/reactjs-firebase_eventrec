@@ -15,6 +15,9 @@ function EventoCard({ id, img, titulo, detalhes, visualizacoes }) {
         firebase.storage().ref(`imagens/${img}`).getDownloadURL().then(url => setUrlImagem(url))
 
     });
+
+
+    
     return (
         <>
             <Card className="justCard">
@@ -24,11 +27,12 @@ function EventoCard({ id, img, titulo, detalhes, visualizacoes }) {
                     <Card.Text>
                         {detalhes}
                     </Card.Text>
-               
-              
+
+
                     <Link to={"/eventodetalhes" + id} className="justBtn"> DETALHES</Link>
-                    </Card.Body>
+                </Card.Body>
             </Card>
+          
 
 
         </>)
