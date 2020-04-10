@@ -26,7 +26,7 @@ function Home(){
         <>
         <Navbar/>
         <div className="row p-3">
-         { eventos.map( item => <EventoCard key={item.id}  id={item.id} img={item.foto} titulo={item.titulo} detalhes={item.detalhes} visualizacoes={item.visualizacoes} /> )  } 
+         { eventos.map( item => <EventoCard key={item.id}  id={item.id} img={item.foto} titulo={item.titulo} tipo={item.tipo} detalhes={item.detalhes} data={item.data} hora={item.hora} visualizacoes={item.visualizacoes} /> )  } 
        </div>
         </>
     )
