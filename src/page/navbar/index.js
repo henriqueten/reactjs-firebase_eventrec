@@ -29,12 +29,7 @@ function Navbar() {
               Home
             </Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/usuario/novo">
-              Cadastrar
-            </Link>
-          </li>
-
+          
           {
             useSelector(state => state.usuarioLogado) > 0 ?
               <>
@@ -55,7 +50,7 @@ function Navbar() {
                 <li className="nav-item">
                   <Link
                     className="nav-link"
-                    onClick={() => dispatch({ type: 'LOG_OUT' })}>
+                    onClick={() => dispatch({ type: 'LOG_OUT' })}  to="/">
                     Sair
                   </Link>
                 </li>
@@ -63,12 +58,19 @@ function Navbar() {
               :
               <>
                 <li className="nav-item">
+                 <Link className="nav-link" to="/usuario/novo">
+                   Cadastrar
+                 </Link>
+                </li>
+
+                <li className="nav-item">
                   <Link
                     className="nav-link"
                     to="/login">
                     Login
                   </Link>
                 </li>
+                
               </>
           }
         </ul>

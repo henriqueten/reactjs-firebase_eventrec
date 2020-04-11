@@ -21,7 +21,7 @@ function EventoCard({ id, img, titulo, tipo, detalhes, data, hora, visualizacoes
     const [detalhesNovo, setDetalhes] = useState(detalhes);
     const [dataNovo, setData] = useState(data);
     const [horaNovo, setHora] = useState(hora);
-    const [fotoNovo, setFoto] = useState();
+    const [fotoNovo, setFoto] = useState(img);
 
     const [excluido, setExcluido] = useState(0);
 
@@ -36,12 +36,17 @@ function EventoCard({ id, img, titulo, tipo, detalhes, data, hora, visualizacoes
     function remover(){
         db.collection('eventos').doc(id).delete().then(() => {
             alert('sucesso')
+
          }).catch(erro => {
              alert('erro');
      });
     }
     
     function atualizar(){
+
+        if(fotoNovo)    
+        storage.ref(`imagens/${fotoNovo.name}`).put(fotoNovo)
+        
         
             db.collection('eventos').doc(id).update({
                 titulo: tituloNovo,
@@ -49,6 +54,7 @@ function EventoCard({ id, img, titulo, tipo, detalhes, data, hora, visualizacoes
                 detalhes: detalhesNovo,
                 data: dataNovo,
                 hora: horaNovo,
+                foto: fotoNovo.name
 
                 //precisar criar a atualização da foto e demais campos
    
