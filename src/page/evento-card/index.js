@@ -126,7 +126,7 @@ function EventoCard({ id, img, titulo, tipo, detalhes, data, hora, visualizacoes
 
             </Modal.Body>
             <Modal.Footer>
-            <Button variant="danger" onClick={remover} onClick={handleClose}>
+            <Button variant="danger" onClick={remover}>
                 Remover
               </Button>
               <Button variant="primary" onClick={atualizar} className="justBtn" > 
