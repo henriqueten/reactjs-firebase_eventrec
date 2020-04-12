@@ -1,5 +1,7 @@
 import React from 'react';
 import './navbar.css';
+
+
 import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -11,6 +13,9 @@ function Navbar() {
 
   return (
     <nav class="navbar navbar-expand-lg" >
+
+
+
       <i class="far fa-calendar-plus text-white fa-2x" />
       <button className="navbar-toggler"
         type="button"

@@ -14,7 +14,7 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_appId,
 
 };*/
-
+/*
 const firebaseConfig = {
   apiKey: "AIzaSyCnco2cAEnpkKQ5zlUAqY2gJE0VkmhamDg",
   authDomain: "eventos-48ac0.firebaseapp.com",
@@ -24,7 +24,7 @@ const firebaseConfig = {
   messagingSenderId: "977520701586",
   appId: "1:977520701586:web:3b985ff5b3f23e6c31b64b"
 };
-/*
+*/
 const firebaseConfig = {
   apiKey: "AIzaSyCIzgA_1ew9nUkpH94TXDDHHWe61GF0HFA",
   authDomain: "eventos-36f9d.firebaseapp.com",
@@ -33,7 +33,7 @@ const firebaseConfig = {
   storageBucket: "eventos-36f9d.appspot.com",
   messagingSenderId: "127451813888",
   appId: "1:127451813888:web:f140e14abe90bf4dfca0e5"
-};*/
+};
 
   export default firebase.initializeApp(firebaseConfig);
 
