@@ -13,6 +13,8 @@ import UsuarioRecuperarSenha from "./page/login/usuario-recuperar-senha";
 import Navbar from "./page/navbar";
 import Myevent from "./page/my-event";
 
+import Navegador from "./page/navegador";
+
 export default function Routes() {
   return (
     <>
@@ -28,6 +30,9 @@ export default function Routes() {
             <Route exact path="/usuario/recupera" component={UsuarioRecuperarSenha} />
             <Route exact path="/navegador" component={Navbar} />
             <Route exact path="/meuevento" component={Myevent } />
+
+
+            <Route exact path="/navegador" componente={Navegador}/>
 
           </Switch>
         </BrowserRouter>

@@ -8,7 +8,7 @@ import EventoCard from '../evento-card';
 function MyEvent(){
 
     const [eventos, setEventos] = useState([]);
-    const [pesquisa, setPesquisa] = useState('');
+   // const [pesquisa, setPesquisa] = useState('');
     let listaeventos = []; 
     const usuarioEmail = useSelector(state => state.usuarioEmail);
 

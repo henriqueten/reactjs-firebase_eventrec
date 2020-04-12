@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useSelector } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+//import { Link } from 'react-router-dom';
 import firebase from '../../firebase';
 
 import { Card, Button, Modal, Form } from "react-bootstrap";
@@ -14,8 +14,8 @@ function EventoCard({ id, img, titulo, tipo, detalhes, data, hora, visualizacoes
     const handleShow = () => setShow(true);
     const [show, setShow] = useState(false);
 
-    const [carregando, setCarregando] = useState();
-    const [msgTipo, setMsgTipo] = useState();
+    //const [carregando, setCarregando] = useState();
+    //const [msgTipo, setMsgTipo] = useState();
     const [tituloNovo, setTitulo] = useState(titulo);
     const [tipoNovo, setTipo] = useState(tipo);
     const [detalhesNovo, setDetalhes] = useState(detalhes);
@@ -23,7 +23,7 @@ function EventoCard({ id, img, titulo, tipo, detalhes, data, hora, visualizacoes
     const [horaNovo, setHora] = useState(hora);
     const [fotoNovo, setFoto] = useState(img);
 
-    const [excluido, setExcluido] = useState(0);
+    //const [excluido, setExcluido] = useState(0);
 
     const db = firebase.firestore();
     const storage = firebase.storage();

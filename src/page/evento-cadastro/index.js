@@ -12,7 +12,7 @@ import "./styles.css";
 
 function EventoCadastro() {
     const [carregando, setCarregando] = useState();
-    const [msgTipo, setMsgTipo] = useState();
+    const [/*msgTipo*/, setMsgTipo] = useState();
     const [titulo, setTitulo] = useState();
     const [tipo, setTipo] = useState();
     const [detalhes, setDetalhes] = useState();
