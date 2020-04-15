@@ -1,0 +1,53 @@
+.logoImg {
+  min-width: 5rem !important;
+  max-width: 5rem;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 40px;
+}
+
+.bg_navbar {
+  background: linear-gradient( 0deg, rgb(223, 195, 37), yellow) !important;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.30);
+  padding: 10px 10px 0 20px;
+}
+
+.menu_styles a {
+  color: rgb(223, 128, 4) !important;
+  transition: .2s ease-in;
+  font-size: large;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  text-align: right !important;
+}
+
+.menu_styles a:hover {
+  color: #f21667 !important;
+}
+
+.justEvent a{
+  color: rgb(223, 128, 4) !important;
+  font-size: large;
+  font-weight: bold;
+  padding-left: 10px !important;
+  padding-right: 20px !important;
+
+  text-decoration: none;
+}
+.justEvent a:hover{
+  color: #f21667 !important;
+
+}
+
+.justIcon {
+  font-size: 25px;
+  margin: 10px 12px 10px 20px;
+  color: rgb(223, 128, 4) !important;
+  transition: .2s ease-in;
+}
+
+.justIcon:hover {
+  color: #f21667 !important;
+}

@@ -1,43 +1,34 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import store from '../src/Store';
-import { Provider } from 'react-redux';
+import { Switch, Route } from "react-router-dom";
+import Main from "./page";
 
-import EventoCadastro from "./page/evento-cadastro";
-import EventoCard from "./page/evento-card";
-import Home from "./page/home";
-import Login from "./page/login";
-import NovoUsuario from "./page/login/usuario-novo";
-import UsuarioRecuperarSenha from "./page/login/usuario-recuperar-senha";
-import Navbar from "./page/navbar";
-import Myevent from "./page/my-event";
+import CadEvent from "./page/eventrec/cad_event";
+import EventPost from "./page/eventrec/event_posting";
+import MyEvent from "./page/my_event";
 
-import Navegador from "./page/navegador";
+import Login from "./page/login"
+import GetLogin from "./page/login/get_login";
+import NewLogin from "./page/login/new_login";
 
 export default function Routes() {
-  return (
-    <>
-      <Provider store={store}>
-        <BrowserRouter>
-          <Switch>
+    return (<>
 
-            <Route exact path="/" component={Home} />
-            <Route exact path="/evento/cadastro" component={EventoCadastro} />
-            <Route exact path="/evento/cadastrado" component={EventoCard} />
+
+        <Switch>
+            <Route exact path="/" component={Main} />
+            <Route exact path="/cadastro/evento" component={CadEvent} />
+            <Route exact path="/postagem/eventos" component={EventPost} />
+            <Route exact path="/meueventos" component={MyEvent} />
+
             <Route exact path="/login" component={Login} />
-            <Route exact path="/usuario/novo" component={NovoUsuario} />
-            <Route exact path="/usuario/recupera" component={UsuarioRecuperarSenha} />
-            <Route exact path="/navegador" component={Navbar} />
-            <Route exact path="/meuevento" component={Myevent } />
+            <Route exact path="/resgatar/senha" component={GetLogin} />
+            <Route exact path="/nova/senha" component={NewLogin} />
+
+        </Switch>
 
 
-            <Route exact path="/navegador" componente={Navegador}/>
 
-          </Switch>
-        </BrowserRouter>
-      </Provider>
+
     </>);
 }
-
-

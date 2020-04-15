@@ -3,31 +3,46 @@
     padding: 0;
     outline: 0;
     box-sizing: border-box;
-  }
-  html,
-  body,
-  #root {
+}
+
+html, body, #root .btn-primary {
     height: 100%;
-  }
-  body {
-   /* background: rgb(14, 99, 11);*/
-   background: rgb(251, 252, 244);
-    -webkit-font-smoothing: antialiased;
-  }
-  
-  #app {
     
+ 
+    
+}
+
+body {
+    background: rgb(251, 252, 244);
+    -webkit-font-smoothing: antialiased;
+}
+
+#app {
     margin: 0 auto;
     padding: 60px 30px;
-  
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-  }
-  
+}
 
-
-  .containerCard {
+.containerCard {
     display: flex;
     margin: 20px;
-  }
+}
+
+.btnColor {
+    background: rgb(245, 121, 6);
+    color: yellow;
+    border: none;
+}
+
+.btnColor:hover {
+    background-color: yellow;
+    color: rgb(245, 121, 6);
+    text-decoration: none;
+}
+
+.iconMargin {
+    margin: 5px 12px 5px 10px;
+}
+

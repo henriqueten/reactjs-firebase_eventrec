@@ -1,72 +1,49 @@
-import React from 'react';
-import './navbar.css';
+import React from "react";
 
 
-import { Link } from 'react-router-dom';
+import { Navbar, Nav, Form, FormLabel } from "react-bootstrap";
 
-import { useSelector, useDispatch } from 'react-redux';
+import Logo from "../../image/logo.png";
 
-import { Nav, Form, FormControl, Button } from "react-bootstrap";
-
-
+import "./styles.css";
 
 
-export default function Navbar() {
+export default function NavBar() {
+    return (
+        <>
 
-    const dispatch = useDispatch();
 
-    return (<>
-        <nav class="navbar navbar-expand-lg">
-            <i class="far fa-calendar-plus text-white fa-2x" />
-            <button className="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation" >
-                <i class="fas fa-bars text-white" />
-            </button>
 
-            <div className="collapse navbar-collapse"
-                id="navbarSupportedContent" >
-                <ul className="navbar-nav mr-auto" >
-                    <li className="nav-item" >
-                        <Link className="nav-link ml-2"
-                            to="/" >
-                            Home </Link> </li>
+            <Navbar bg="light" expand="lg" className="bg_navbar ">
+                <Navbar.Brand href="/">
+                    <img className="logoImg" src={Logo} alt="Logo" />
+                </Navbar.Brand>                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto">
+                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="/cadastro/evento">Publicar Evento</Nav.Link>
+                        <Nav.Link href="/postagem/eventos">eventos</Nav.Link>
+                        <Nav.Link href="/meueventos">Meus Eventos</Nav.Link>
 
-                    {useSelector(state => state.usuarioLogado) > 0 ? <>
-                        <li className="nav-item" >
-                            <Link
-                                className="nav-link"
-                                to="/evento/cadastro" >
-                                Publicar Evento </Link> </li> <li className="nav-item" >
-                            <Link
-                                className="nav-link"
-                                to="/meuevento" >
-                                Meus Eventos </Link> </li>
-                        <li className="nav-item" >
-                            <Link
-                                className="nav-link"
-                                onClick={
-                                    () => dispatch({ type: 'LOG_OUT' })}
-                                to="/" >
-                                Sair </Link> </li> </> : <>
-                            <li className="nav-item" >
-                                <Link className="nav-link"
-                                    to="/usuario/novo" >
-                                    Cadastrar </Link> </li>
-
-                            <li className="nav-item" >
-                                <Link
-                                    className="nav-link"
-                                    to="/login" >
-                                    Login </Link> </li>
-                        </>
-                    }
-                </ul>
-            </div>
-        </nav>
-    </>)
+                    </Nav>
+                    <Form inline >
+                        <FormLabel type="text" className="mr-sm-2">
+                            <Nav className="mr-auto">
+                                <Nav.Link href="/login">
+                                    Login
+                                </Nav.Link>
+                            </Nav>
+                        </FormLabel>
+                        <FormLabel type="text" className="mr-sm-2" >
+                            <Nav className="mr-auto">
+                                <Nav.Link href="/nova/senha">
+                                    Criar conta
+                                </Nav.Link>
+                            </Nav>
+                        </FormLabel>
+                        <div href="#"><span className="fas fa-power-off justIcon" /></div>
+                    </Form>
+                </Navbar.Collapse>
+            </Navbar>
+        </>);
 }

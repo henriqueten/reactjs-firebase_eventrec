@@ -1,0 +1,44 @@
+
+.jack {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    width: 400px;
+    height: auto;
+   
+}
+
+.justInput{
+    margin: 20px 5px 10px 5px;
+}
+
+.btnLog {
+    margin-top: 20px;
+
+    background-color: rgb(245, 121, 6) !important;
+border-color:  rgb(245, 121, 6) !important;
+font-weight: bold;
+}
+.btnLog:hover{
+   
+
+    background-color:yellow !important;
+    color: rgb(245, 121, 6) !important;
+
+}
+.justText{
+text-align: center;
+}
+.textStyle {
+    color:  rgb(187, 93, 4) ;
+    text-decoration: none !important ;
+    }
+    .textStyle:hover {
+        color:  red ;
+       
+        }
+.imgPosition{
+   display: flex;
+   justify-content: center;
+}
