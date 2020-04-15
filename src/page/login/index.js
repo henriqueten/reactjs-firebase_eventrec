@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -11,7 +12,7 @@ import Logo from "../../image/logo.png";
 import "./styles.css";
 
 
-function Login() {
+export default function Login() {
     const [email, setEmail] = useState();
     const [senha, setSenha] = useState();
     const [msgTipo, setMsgTipo] = useState();
@@ -21,6 +22,7 @@ function Login() {
     const handlerSenhaChange = event => setSenha(event.target.value)
     
 
+
     const handlerSubmit = event => {
         event.preventDefault()
         alert(JSON.stringify({ email, senha, msgTipo }))
@@ -28,7 +30,7 @@ function Login() {
 
     const dispatch = useDispatch();
 
-    function logar() {
+     function logar() {
 
         firebase.auth().signInWithEmailAndPassword(email, senha).then(resultado => {
             setMsgTipo('Sucesso');
@@ -41,25 +43,17 @@ function Login() {
         });
 
     }
-
    
-
-
-
-
-
-   
-
     return (
 
         <>
         <div>
-        {
-                    useSelector(state => state.usuarioLogado) > 0 ? <Redirect to='/' /> : null
-                }
+      
         
             <Form onSubmit={handlerSubmit}>
-                
+            {
+                    useSelector(state => state.usuarioLogado) > 0 ? <Redirect to='/' /> : null
+                }
 
                 <Card className="jack" >
 
@@ -105,4 +99,3 @@ function Login() {
 
 
 
-export default Login;
