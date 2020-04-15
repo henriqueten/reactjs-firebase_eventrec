@@ -1,4 +1,5 @@
 import React from "react";
+import { Provider } from 'react-redux';
 
 import { Switch, Route } from "react-router-dom";
 import Main from "./page";
@@ -11,9 +12,13 @@ import Login from "./page/login"
 import GetLogin from "./page/login/get_login";
 import NewLogin from "./page/login/new_login";
 
+import store from "../src/Store";
+
+
 export default function Routes() {
     return (<>
 
+<Provider store={store}>
 
         <Switch>
             <Route exact path="/" component={Main} />
@@ -27,7 +32,7 @@ export default function Routes() {
 
         </Switch>
 
-
+        </Provider>
 
 
     </>);
