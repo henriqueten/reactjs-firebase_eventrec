@@ -16,7 +16,7 @@ export default function CadEvent() {
     const [hora, updateHora] = useState('')
     const [foto, updateFoto] = useState('')
 
-    const handlerSubmit = (event, props) => {
+    const handlerSubmit = event => {
         event.preventDefault()
         alert(JSON.stringify({ titulo, tipo, detalhe, data, hora, foto }))
 
