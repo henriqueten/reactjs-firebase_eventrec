@@ -8,8 +8,10 @@ import Logo from "../../image/logo.png";
 
 import "./styles.css";
 
+import Login from "../login";
 
 export default function NavBar() {
+
 
     const dispatch = useDispatch();
 
@@ -24,42 +26,43 @@ export default function NavBar() {
                 </Navbar.Brand>                <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
 
-                 {useSelector(state => state.usuarioLogado) > 0 ? <>
+
                     <Nav className="mr-auto">
                         <Nav.Link href="/">Home</Nav.Link>
 
-                     
 
-                            <Nav.Link href="/cadastro/evento">Publicar Evento</Nav.Link>
-                            <Nav.Link href="/postagem/eventos">eventos</Nav.Link>
-                            <Nav.Link href="/meueventos">Meus Eventos</Nav.Link> 
 
-                        </Nav>
-                        </> : <>
+                        <Nav.Link href="/cadastro/evento">Publicar Evento</Nav.Link>
+                        <Nav.Link href="/postagem/eventos">eventos</Nav.Link>
+                        <Nav.Link href="/meueventos">Meus Eventos</Nav.Link>
 
-                            <Form inline >
-                                <FormLabel type="text" className="mr-sm-2">
-                                    <Nav className="mr-auto">
-                                        <Nav.Link href="/login">
-                                            Login
+                    </Nav>
+
+
+                    <Form inline >
+                        <FormLabel type="text" className="mr-sm-2">
+                            <Nav className="mr-auto">
+                                <Nav.Link href="/login">
+                                    Login
                                 </Nav.Link>
-                                    </Nav>
-                                </FormLabel>
-                                <FormLabel type="text" className="mr-sm-2" >
-                                    <Nav className="mr-auto">
-                                        <Nav.Link href="/nova/senha">
-                                            Criar conta
+                            </Nav>
+                        </FormLabel>
+                        <FormLabel type="text" className="mr-sm-2" >
+                            <Nav className="mr-auto">
+                                <Nav.Link href="/nova/senha">
+                               Cadastre uma cota
+
                                 </Nav.Link>
-                                    </Nav>
-                                </FormLabel>
+                            </Nav>
+                        </FormLabel>
 
-                                <div
-                                    href="/"
-                                    onClick={() => dispatch({ type: 'LOG_OUT' })}>
-                                    <span className="fas fa-power-off justIcon" />
-                                </div> 
+                        <div
+                            to="/"
+                            onClick={() => dispatch({ type: 'LOG_OUT' })}>
+                            <span className="fas fa-power-off justIcon" />
+                        </div>
 
-                            </Form></>}
+                    </Form>
                 </Navbar.Collapse>
             </Navbar>
         </>);

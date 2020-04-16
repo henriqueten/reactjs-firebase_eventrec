@@ -7,7 +7,7 @@ import { Card, Button, Form, Modal } from "react-bootstrap";
 
 import "./styles.css";
 
-export default function EventPost(id, img, titulo, tipo, detalhes, data, hora, visualizacoes) {
+export default function EventPost({id, img, titulo, tipo, detalhes, data, hora, visualizacoes}) {
 
     const [urlImagem, setUrlImagem] = useState();
 

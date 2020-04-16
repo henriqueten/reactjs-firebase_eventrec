@@ -53,7 +53,7 @@ export default function CadEvent() {
                 })
             })
 
-            setEventos(listaeventos);
+            //setEventos(listaeventos);
         })
     })
 

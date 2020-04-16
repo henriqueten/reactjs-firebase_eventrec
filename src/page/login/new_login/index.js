@@ -14,6 +14,8 @@ export default function NewLogin() {
     const [msg, setMsg] = useState();
     const [carregando, setCarregando] = useState();
 
+    
+
     function cadastrar() {
         setCarregando(1);
 
@@ -54,13 +56,11 @@ export default function NewLogin() {
 
     const handlerEmailChange = event => setEmail(event.target.value)
     const handlerSenhaChange = event => setSenha(event.target.value)
-    //const handlerMsgTipoChange = event => setMsgTipo(event.target.value)
-    //const handlerMsgChange = event => setMsg(event.target.value)
-    //const handlerCarregandoChange = event => setCarregando(event.target.value)
+
 
     const handlerSubmit = event => {
         event.preventDefault()
-        alert(JSON.stringify({ email, senha, msgTipo, msg, carregando }))
+        alert(JSON.stringify({ email, senha }))
     }
 
 
