@@ -22,7 +22,7 @@ export default function CadEvent() {
     const [foto, updateFoto] = useState('')
     const usuarioEmail = useSelector(state => state.usuarioEmail);
     const [carregando, setCarregando] = useState();
-    const [msgTipo, setMsgTipo] = useState();
+    const [setMsgTipo] = useState();
 
     const handlerSubmit = event => {
         event.preventDefault()
@@ -38,7 +38,7 @@ export default function CadEvent() {
     const handlerFotoChange = event => updateFoto(event.target.value)
 
 
-    const [eventos, setEventos] = useState([]);
+    const [setEventos] = useState([]);
     let listaeventos = [];
 
     const storage = firebase.storage();
@@ -132,7 +132,6 @@ export default function CadEvent() {
                                         name="detalhe"
                                         type="string"
                                         as="textarea"
-                                        placeholder="Informe um título"
                                         onChange={handlerDetalheChange}
                                         placeholder="Descrição"></Form.Control>
                                 </Form.Group>
@@ -170,7 +169,7 @@ export default function CadEvent() {
                                 {
                                     carregando > 0 ? <div class="spinner-border text-danger mx-auto" role="status">
                                         <span class="sr-only">Loading...</span></div>
-                                        : <button onClick={cadastrar} type="button" className="btn btn-lg btn-block mt-3 mb-5 btn-cadastro">Publicar Evento</button>
+                                        : <Button onClick={cadastrar} type="button" className="btn btn-lg btn-block mt-3 mb-5 btn-cadastro">Publicar Evento</Button>
                                 }
 
 

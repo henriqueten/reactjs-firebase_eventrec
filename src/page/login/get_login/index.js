@@ -47,8 +47,7 @@ export default function GetLogin() {
                             type="email"
                             placeholder="Informe o Email"
                             className="justInput"
-                            onChange={handlerEmailChange}
-                            className="justInput" />
+                            onChange={handlerEmailChange} />
                     </Form.Row>
 
                     <div >
