@@ -1,23 +1,38 @@
-import React from "react";
 
-import { Form, Card } from "react-bootstrap";
+import React, { useState, useEffect } from 'react';
+import Navbar from '../navbar';
+import { useSelector } from 'react-redux';
+import firebase from '../../firebase';
+import EventPost from "../eventrec/event_posting";
 
-export default function MyEvent(){
-    return(<><Form>
-        <Card className="containerCard" >
-            <Card.Header >
-                <Card.Title className="positionTitle">
-                    <span className="fas fa-list-ul iconMargin" />
-                    Meus eventos
-                 </Card.Title>
-            </Card.Header>
-            <Card.Body>
-                <Form.Row>
-                    {/* {eventos.map(item => <EventoCard key={item.id} id={item.id} img={item.foto} titulo={item.titulo} detalhes={item.detalhes} visualizacoes={item.visualizacoes} />)}*/}
-                </Form.Row>
+function MyEvent(){
 
-            </Card.Body>
+    const [eventos, setEventos] = useState([]);
+   // const [pesquisa, setPesquisa] = useState('');
+    let listaeventos = []; 
+    const usuarioEmail = useSelector(state => state.usuarioEmail);
 
-        </Card>
-    </Form></>);
+    useEffect(() => {
+        firebase.firestore().collection('eventos').where('usuario','==',usuarioEmail).get().then(async (resultado) => {
+            await resultado.docs.forEach(doc => {
+                listaeventos.push({
+                    id:  doc.id,
+                    ...doc.data()
+                })
+            })
+
+            setEventos(listaeventos);
+        })
+    });
+
+    return(
+        <>
+        <Navbar/>
+        <div className="row p-3">
+         { eventos.map( item => <EventPost key={item.id}  id={item.id} img={item.foto} titulo={item.titulo} tipo={item.tipo} detalhes={item.detalhes} data={item.data} hora={item.hora} visualizacoes={item.visualizacoes} /> )  } 
+       </div>
+        </>
+    )
 }
+
+export default MyEvent;
