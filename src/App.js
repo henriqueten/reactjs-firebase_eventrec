@@ -15,7 +15,7 @@ import { BrowserRouter } from "react-router-dom";
 function App() {
     return (
         <>
-<Provider store={store}>
+           <Provider store={store}>
             <BrowserRouter>
                 <NavBar />
                 <Routes />

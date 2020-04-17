@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState }from "react";
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -10,16 +10,15 @@ import "./styles.css";
 
 import Login from "../login";
 
-export default function NavBar() {
+import 'firebase/auth';
+import firebase from '../../firebase';
 
+export default function NavBar() {
 
     const dispatch = useDispatch();
 
     return (
         <>
-
-
-
             <Navbar bg="light" expand="lg" className="bg_navbar ">
                 <Navbar.Brand href="/">
                     <img className="logoImg" src={Logo} alt="Logo" />
@@ -28,18 +27,34 @@ export default function NavBar() {
 
 
                     <Nav className="mr-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
-
-
-
-                        <Nav.Link href="/cadastro/evento">Publicar Evento</Nav.Link>
-                        <Nav.Link href="/postagem/eventos">eventos</Nav.Link>
-                        <Nav.Link href="/meueventos">Meus Eventos</Nav.Link>
+                    {
+                     useSelector(state => state.usuarioLogado) > 0 ?
+                     <>
+                     <Nav.Link href="/">Home</Nav.Link>
+                     <Nav.Link href="/cadastro/evento">Publicar Evento</Nav.Link>
+                     <Nav.Link href="/postagem/eventos">Eventos</Nav.Link>
+                     <Nav.Link href="/meueventos">Meus Eventos</Nav.Link>
+                     </>
+                     :
+                     <>
+                     <Nav.Link href="/">Home</Nav.Link>
+                     </>
+                    }       
 
                     </Nav>
 
-
                     <Form inline >
+                    {
+                     useSelector(state => state.usuarioLogado) > 0 ?
+                     <>
+                     <div
+                            to="/"
+                            onClick={ firebase.auth().signOut() ,() => dispatch({ type: 'LOG_OUT' })}>
+                            <span className="fas fa-power-off justIcon" />
+                        </div>
+                     </>
+                     :
+                     <>
                         <FormLabel type="text" className="mr-sm-2">
                             <Nav className="mr-auto">
                                 <Nav.Link href="/login">
@@ -50,18 +65,12 @@ export default function NavBar() {
                         <FormLabel type="text" className="mr-sm-2" >
                             <Nav className="mr-auto">
                                 <Nav.Link href="/nova/senha">
-                               Cadastre uma cota
-
+                               Cadastre uma conta
                                 </Nav.Link>
                             </Nav>
                         </FormLabel>
-
-                        <div
-                            to="/"
-                            onClick={() => dispatch({ type: 'LOG_OUT' })}>
-                            <span className="fas fa-power-off justIcon" />
-                        </div>
-
+                     </>
+                    }
                     </Form>
                 </Navbar.Collapse>
             </Navbar>

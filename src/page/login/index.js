@@ -9,6 +9,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { Form, Card, Button } from 'react-bootstrap';
 
 import Logo from "../../image/logo.png";
+import ApisLogin from './apis_login/index';
 import "./styles.css";
 
 
@@ -77,11 +78,14 @@ export default function Login() {
                         </Form.Row>
 
                         <Button type="submit" onClick={logar} className="btnLog col-md-12">Logar</Button>
+                        
                         <div>
                             {msgTipo === 'Sucesso' && <span> Você está conectado </span>}
 
                             {msgTipo === 'Erro' && <span> Verifique se a senha ou usuário estão corretos </span>}
                         </div>
+
+                        { msgTipo !== 'Sucesso' && <ApisLogin/> }
                     </Card.Body>
                     <Form.Group className="justText" >
                         <Link to="/resgatar/senha" className="mx-2 textStyle">Recuperar Senha</Link>

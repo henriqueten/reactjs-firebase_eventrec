@@ -22,7 +22,7 @@ export default function CadEvent() {
     const [foto, updateFoto] = useState('')
     const usuarioEmail = useSelector(state => state.usuarioEmail);
     const [carregando, setCarregando] = useState();
-    const [setMsgTipo] = useState();
+    const [msgTipo, setMsgTipo] = useState();
 
     const handlerSubmit = event => {
         event.preventDefault()
@@ -58,7 +58,7 @@ export default function CadEvent() {
     })
 
     function cadastrar() {
-        setMsgTipo(null)
+        setMsgTipo(' ')
         setCarregando(1);
 
         storage.ref(`imagens/${foto.name}`).put(foto).then(() => {
