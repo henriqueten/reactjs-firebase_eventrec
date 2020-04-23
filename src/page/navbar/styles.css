@@ -1,10 +1,25 @@
 .logoImg {
   min-width: 5rem !important;
   max-width: 5rem;
-  margin-bottom: 10px;
-  margin-left: 20px;
-  margin-right: 40px;
+
 }
+.justIcon {
+  font-size: 25px;
+  margin: 10px 12px 10px 20px;
+  color: white !important;
+  transition: .2s ease-in;
+}
+
+.justIcon:hover {
+  color: rgb(223, 195, 37) !important;
+}
+
+
+
+
+
+
+
 
 .bg_navbar {
   background: linear-gradient( 0deg, rgb(223, 195, 37), yellow) !important;
@@ -12,16 +27,7 @@
   padding: 10px 10px 0 20px;
 }
 
-.menu_styles a {
-  color: rgb(223, 128, 4) !important;
-  transition: .2s ease-in;
-  font-size: large;
-  font-weight: bold;
-  padding-left: 10px;
-  padding-right: 10px;
-  text-decoration: none;
-  text-align: right !important;
-}
+
 
 .menu_styles a:hover {
   color: #f21667 !important;
@@ -41,13 +47,68 @@
 
 }
 
-.justIcon {
-  font-size: 25px;
-  margin: 10px 12px 10px 20px;
-  color: rgb(223, 128, 4) !important;
-  transition: .2s ease-in;
+
+
+
+.termino{}
+
+
+
+
+
+
+
+
+
+
+.navbar {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 1fr 0.5fr;
+
+
+  padding: 0 30px;
+  background: #283e4a  ;
+  border-top: none;
+  box-shadow: none;
+  height: 52px;
+  animation: appear .334s cubic-bezier(0, 0, .2, 1) .15s forwards;
 }
 
-.justIcon:hover {
-  color: #f21667 !important;
+.navbar ul {
+  margin: 0;
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+.positionLogin{
+  text-align: right !important;
+}
+
+.navbar li {
+  padding: 10px;
+}
+
+.navbar a {
+  font-size: 1.2rem;
+  line-height: 1.33333;
+  color: #c7d1d8;
+  font-weight: 400;
+  line-height: 1.6rem;
+  transition: color .3s;
+  text-decoration: none;
+ 
+  padding: 12px 12px 2px 12px;
+  
+ 
+}
+
+.navbar a:hover {
+
+  color: white;
+  padding: 12px;
+  border-bottom: 1px;
+  transition:  0.3s;
+
+  padding: 12px 12px 8px 12px;
+  border-bottom: solid 4px;
 }

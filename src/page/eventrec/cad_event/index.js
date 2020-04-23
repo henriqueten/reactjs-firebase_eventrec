@@ -21,8 +21,8 @@ export default function CadEvent() {
     const [hora, updateHora] = useState('')
     const [foto, updateFoto] = useState('')
     const usuarioEmail = useSelector(state => state.usuarioEmail);
-    const [carregando, setCarregando] = useState();
-    const [msgTipo, setMsgTipo] = useState();
+    const [carregando, setCarregando] = useState('');
+    const [ setMsgTipo] = useState('');
 
     const handlerSubmit = event => {
         event.preventDefault()
@@ -38,7 +38,7 @@ export default function CadEvent() {
     const handlerFotoChange = event => updateFoto(event.target.value)
 
 
-    const [setEventos] = useState([]);
+   
     let listaeventos = [];
 
     const storage = firebase.storage();
@@ -53,12 +53,12 @@ export default function CadEvent() {
                 })
             })
 
-            //setEventos(listaeventos);
+       
         })
     })
 
     function cadastrar() {
-        setMsgTipo(' ')
+        setMsgTipo('');
         setCarregando(1);
 
         storage.ref(`imagens/${foto.name}`).put(foto).then(() => {
