@@ -8,6 +8,7 @@ import EventPost from "../eventrec/event_posting";
 function MyEvent(){
 
     const [eventos, setEventos] = useState([]);
+    
 
     let listaeventos = []; 
     const usuarioEmail = useSelector(state => state.usuarioEmail);
@@ -29,8 +30,10 @@ function MyEvent(){
         <>
      
         <div className="row p-3">
-        { eventos.map( item => <EventPost key={item.id}  id={item.id} img={item.foto} titulo={item.titulo} tipo={item.tipo} detalhes={item.detalhes} data={item.data} hora={item.hora} visualizacoes={item.visualizacoes} /> )  } 
-       </div>
+            
+        {  eventos.map( item => <EventPost key={item.id}  id={item.id} img={item.foto} titulo={item.titulo} tipo={item.tipo} detalhes={item.detalhes} data={item.data} hora={item.hora} visualizacoes={item.visualizacoes} /> )  } 
+    
+        </div>
         </>
     )
 }

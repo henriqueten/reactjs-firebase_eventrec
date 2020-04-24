@@ -19,10 +19,10 @@ export default function CadEvent() {
     const [detalhe, updateDetalhe] = useState('')
     const [data, updateData] = useState('')
     const [hora, updateHora] = useState('')
-    const [foto, updateFoto] = useState('')
     const usuarioEmail = useSelector(state => state.usuarioEmail);
     const [carregando, setCarregando] = useState('');
-    const [ setMsgTipo] = useState('');
+    const [foto, setFoto] = useState();
+    const [msgTipo, setMsgTipo] = useState('');
 
     const handlerSubmit = event => {
         event.preventDefault()
@@ -35,7 +35,6 @@ export default function CadEvent() {
     const handlerDetalheChange = event => updateDetalhe(event.target.value)
     const handlerDataChange = event => updateData(event.target.value)
     const handlerHoraChange = event => updateHora(event.target.value)
-    const handlerFotoChange = event => updateFoto(event.target.value)
 
 
   
@@ -61,7 +60,7 @@ export default function CadEvent() {
  
 
     function cadastrar() {
-        setMsgTipo('');
+        setMsgTipo(null);
         setCarregando(0);
 
         storage.ref(`imagens/${foto.name}`).put(foto).then(() => {
@@ -160,22 +159,14 @@ export default function CadEvent() {
                                     </Form.Control>
                                 </Form.Group>
 
-                                <Form.Group className="col-md-12">
-                                    <Form.Label>Folder do Evento</Form.Label>
-                                    <Form.Control
-                                        name=""
-                                        type="file"
-                                        onChange={handlerFotoChange}
-                                        className="inputBord" >
-                                    </Form.Control>
-                                </Form.Group>
-
+                                <Form.Group className="col-md-6">
+                                <Form.Label>Folder do Evento</Form.Label>
+                                <Form.Control onChange={(e) => setFoto(e.target.files[0])} className="inputBord" type="file" ></Form.Control>
                                 {
-                                    carregando > 0 ? <div class="spinner-border text-danger mx-auto" role="status">
-                                        <span class="sr-only">Loading...</span></div>
-                                        : <Button onClick={cadastrar} type="button" className="btn btn-lg btn-block mt-3 mb-5 btn-cadastro">Publicar Evento</Button>
-                                }
-
+                            carregando > 0 ? <div class="spinner-border text-danger mx-auto" role="status"> <span class="sr-only">Loading...</span></div>
+                                : <button onClick={cadastrar} type="button" className="btn btn-lg btn-block mt-3 mb-5 btn-cadastro">Publicar Evento</button>
+                               }
+                            </Form.Group>
 
                             </Form.Row>
 
@@ -183,23 +174,7 @@ export default function CadEvent() {
                     </Card>
                 </Form>
 
-                <Form>
-                    <Card className="containerCard" >
-                        <Card.Header >
-                            <Card.Title className="positionTitle">
-                                <span className="fas fa-list-ul iconMargin" />
-                            Lista de eventos cadastrados
-                         </Card.Title>
-                        </Card.Header>
-                        <Card.Body>
-                            <Form.Row>
-                                <EventPost />     
-                            </Form.Row>
 
-                        </Card.Body>
-
-                    </Card>
-                </Form>
 
             </Form>
         </>

@@ -13,13 +13,13 @@ const firebaseConfig = {
 };*/
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCnco2cAEnpkKQ5zlUAqY2gJE0VkmhamDg",
-  authDomain: "eventos-48ac0.firebaseapp.com",
-  databaseURL: "https://eventos-48ac0.firebaseio.com",
-  projectId: "eventos-48ac0",
-  storageBucket: "eventos-48ac0.appspot.com",
-  messagingSenderId: "977520701586",
-  appId: "1:977520701586:web:3b985ff5b3f23e6c31b64b"
+  apiKey: "AIzaSyCIzgA_1ew9nUkpH94TXDDHHWe61GF0HFA",
+  authDomain: "eventos-36f9d.firebaseapp.com",
+  databaseURL: "https://eventos-36f9d.firebaseio.com",
+  projectId: "eventos-36f9d",
+  storageBucket: "eventos-36f9d.appspot.com",
+  messagingSenderId: "127451813888",
+  appId: "1:127451813888:web:f140e14abe90bf4dfca0e5"
 };
 /*
 const firebaseConfig = {
