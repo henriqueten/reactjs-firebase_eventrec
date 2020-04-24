@@ -26,7 +26,7 @@ export default function CadEvent() {
 
     const handlerSubmit = event => {
         event.preventDefault()
-        alert(JSON.stringify({ titulo, tipo, detalhe, data, hora, foto }))
+      
 
     }
 
@@ -38,11 +38,12 @@ export default function CadEvent() {
     const handlerFotoChange = event => updateFoto(event.target.value)
 
 
-   
+  
     let listaeventos = [];
 
     const storage = firebase.storage();
     const db = firebase.firestore();
+ 
 
     useEffect(() => {
         firebase.firestore().collection('eventos').get().then(async (resultado) => {
@@ -53,9 +54,11 @@ export default function CadEvent() {
                 })
             })
 
-       
+         
         })
     })
+
+ 
 
     function cadastrar() {
         setMsgTipo('');
@@ -78,13 +81,14 @@ export default function CadEvent() {
                 setMsgTipo('Sucesso');
                 setCarregando(0);
             }).catch(erro => {
-                setMsgTipo('Erro');
-                setCarregando(0);
-            });
-
+                 setMsgTipo('Erro');
+                 setCarregando(0);
         });
+    });
+}
 
-    }
+
+
 
 
 
