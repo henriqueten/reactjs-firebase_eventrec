@@ -1,4 +1,4 @@
-import React, {  Component }  from 'react';
+/*import React, {  Component }  from 'react';
 import firebase_org from '../../../firebase';
 import firebase from 'firebase';
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
@@ -50,4 +50,4 @@ class ApisLogin extends Component{
 
 
 
-export default ( ApisLogin )
+export default ( ApisLogin )*/

@@ -62,7 +62,7 @@ export default function CadEvent() {
 
     function cadastrar() {
         setMsgTipo('');
-        setCarregando(1);
+        setCarregando(0);
 
         storage.ref(`imagens/${foto.name}`).put(foto).then(() => {
             db.collection('eventos').add({
