@@ -13,7 +13,7 @@ import ApisLogin from './apis_login/index';
 import "./styles.css";
 
 
-export default function Login() {
+function Login() {
     const [email, setEmail] = useState();
     const [senha, setSenha] = useState();
     const [msgTipo, setMsgTipo] = useState();
@@ -88,7 +88,7 @@ export default function Login() {
                         { msgTipo !== 'Sucesso' && <ApisLogin/> }
                     </Card.Body>
                     <Form.Group className="justText" >
-                        <Link to="/resgatar/senha" className="mx-2 textStyle">Recuperar Senha</Link>
+                    <Link to="/resgatar/senha" className="mx-2 textStyle">Recuperar Senha</Link>
 
                         <Link to="/nova/senha" className="mx-2 textStyle">Cadastrar Senha</Link>
                     </Form.Group>
@@ -100,4 +100,6 @@ export default function Login() {
     )
 
 }
+
+export default Login;
 

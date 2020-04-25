@@ -7,7 +7,7 @@ import { Card, Button, Form, Modal } from "react-bootstrap";
 
 import "./styles.css";
 
-export default function EventPost({id, img, titulo, tipo, detalhes, data, hora, visualizacoes}) {
+export default function EventPost({id, img, titulo, tipo, detalhe, data, hora, visualizacoes}) {
 
     const [urlImagem, setUrlImagem] = useState();
 
@@ -19,25 +19,18 @@ export default function EventPost({id, img, titulo, tipo, detalhes, data, hora, 
     //const [msgTipo, setMsgTipo] = useState();
     const [tituloNovo, setTitulo] = useState(titulo);
     const [tipoNovo, setTipo] = useState(tipo);
-    const [detalhesNovo, setDetalhes] = useState(detalhes);
+    
+    const [detalheNovo, setDetalhe] = useState(detalhe);
     const [dataNovo, setData] = useState(data);
     const [horaNovo, setHora] = useState(hora);
     const [fotoNovo, setFoto] = useState(img);
-
-
-    const handlerTituloNovoChange = event => setTitulo(event.target.value)
-    const handlerTipoNovoChange = event => setTipo(event.target.value)
-    const handlerDetalhesNovoChange = event => setDetalhes(event.target.value)
-    const handlerDataNovoChange = event => setData(event.target.value)
-    const handlerHoraNovoChange = event => setHora(event.target.value)
-    const handlerFotoNovoChange = event => setFoto(event.target.files[0])
 
 
     const handlerSubmit = event => {
         event.preventDefault()
         alert(JSON.stringify({ tituloNovo,
             tipoNovo,
-            detalhesNovo,
+            detalheNovo,
             dataNovo,
             horaNovo,
             fotoNovo,}))
@@ -65,17 +58,18 @@ export default function EventPost({id, img, titulo, tipo, detalhes, data, hora, 
 
     function atualizar() {
 
-        if (fotoNovo)
-            storage.ref(`imagens/${fotoNovo.name}`).put(fotoNovo)
-
-
         db.collection('eventos').doc(id).update({
             titulo: tituloNovo,
-            tipo: tipoNovo,
-            detalhes: detalhesNovo,
-            data: dataNovo,
-            hora: horaNovo,
-            foto: fotoNovo.name
+                tipo: tipoNovo,
+                detalhe: detalheNovo,
+                data: dataNovo,
+                hora: horaNovo,
+                
+                visualizacoes: 0,
+                foto: fotoNovo,
+                publico: 1,
+          
+
 
             //precisar criar a atualização da foto e demais campos
 
@@ -100,7 +94,7 @@ export default function EventPost({id, img, titulo, tipo, detalhes, data, hora, 
                         {titulo}
                     </Card.Title>
                     <Card.Text>
-                        {detalhes}
+                        {detalhe}
                     </Card.Text >
                     <div className="text-center">
                         <Button onClick={handleShow} className="btnColor">Go somewhere</Button>
@@ -130,32 +124,32 @@ export default function EventPost({id, img, titulo, tipo, detalhes, data, hora, 
                                 <Form.Row>
                                     <Form.Group className="col-md-12">
                                         <Form.Label >Título</Form.Label>
-                                        <Form.Control onChange={handlerTituloNovoChange} placeholder={titulo} />
+                                        <Form.Control onChange={(e) => setTitulo(e.target.value)} placeholder={titulo} />
                                     </Form.Group>
 
                                     <Form.Group className="col-md-6">
                                         <Form.Label>Tipo do Evento</Form.Label>
-                                        <Form.Control onChange={handlerTipoNovoChange} placeholder={tipo} ></Form.Control>
+                                        <Form.Control onChange={(e) => setTipo(e.target.value)} placeholder={tipo} ></Form.Control>
                                     </Form.Group>
 
                                     <Form.Group className="col-md-12">
                                         <Form.Label>Descrição do Evento</Form.Label>
-                                        <Form.Control onChange={handlerDetalhesNovoChange} as="textarea" placeholder={detalhes} ></Form.Control>
+                                        <Form.Control onChange={(e) => setDetalhe(e.target.value)} as="textarea" placeholder={detalhe} ></Form.Control>
                                     </Form.Group>
 
                                     <Form.Group className="col-md-6">
                                         <Form.Label>Data</Form.Label>
-                                        <Form.Control onChange={handlerDataNovoChange} placeholder={data}></Form.Control>
+                                        <Form.Control onChange={(e) => setData(e.target.value)} placeholder={data}></Form.Control>
                                     </Form.Group>
 
                                     <Form.Group className="col-md-6">
                                         <Form.Label>Hora</Form.Label>
-                                        <Form.Control onChange={handlerHoraNovoChange} placeholder={hora}></Form.Control>
+                                        <Form.Control onChange={(e) => setHora(e.target.value)} placeholder={hora}></Form.Control>
                                     </Form.Group>
 
                                     <Form.Group className="col-md-6">
                                         <Form.Label>Folder do Evento</Form.Label>
-                                        <Form.Control onChange={handlerFotoNovoChange} className="inputBord" type="file" ></Form.Control>
+                                        <Form.Control onChange={(e) => setFoto(e.target.files[0])} className="inputBord" type="file" ></Form.Control>
                                     </Form.Group>
 
                                 </Form.Row>

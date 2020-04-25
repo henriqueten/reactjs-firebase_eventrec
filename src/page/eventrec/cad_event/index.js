@@ -14,11 +14,11 @@ import "./styles.css";
 
 export default function CadEvent() {
 
-    const [titulo, updateTitulo] = useState('')
-    const [tipo, updateTipo] = useState('')
-    const [detalhe, updateDetalhe] = useState('')
-    const [data, updateData] = useState('')
-    const [hora, updateHora] = useState('')
+    const [titulo, setTitulo] = useState('')
+    const [tipo, setTipo] = useState('')
+    const [detalhe, setDetalhe] = useState('')
+    const [data, setData] = useState('')
+    const [hora, setHora] = useState('')
     const usuarioEmail = useSelector(state => state.usuarioEmail);
     const [carregando, setCarregando] = useState('');
     const [foto, setFoto] = useState();
@@ -30,14 +30,7 @@ export default function CadEvent() {
 
     }
 
-    const handlerTituloChange = event => updateTitulo(event.target.value)
-    const handlerTipoChange = event => updateTipo(event.target.value)
-    const handlerDetalheChange = event => updateDetalhe(event.target.value)
-    const handlerDataChange = event => updateData(event.target.value)
-    const handlerHoraChange = event => updateHora(event.target.value)
 
-
-  
     let listaeventos = [];
 
     const storage = firebase.storage();
@@ -114,7 +107,7 @@ export default function CadEvent() {
                                         name="titulo"
                                         type="string"
                                         placeholder="Informe um título"
-                                        onChange={handlerTituloChange} />
+                                        onChange={(e) => setTitulo(e.target.value)} />
                                 </Form.Group>
 
                                 <Form.Group className="col-md-6">
@@ -123,7 +116,7 @@ export default function CadEvent() {
                                         name="tipo"
                                         type="string"
                                         placeholder="Informe um título"
-                                        onChange={handlerTipoChange}>
+                                        onChange={(e) => setTipo(e.target.value)}>
 
 
                                     </Form.Control>
@@ -135,7 +128,7 @@ export default function CadEvent() {
                                         name="detalhe"
                                         type="string"
                                         as="textarea"
-                                        onChange={handlerDetalheChange}
+                                        onChange={(e) => setDetalhe(e.target.value)}
                                         placeholder="Descrição"></Form.Control>
                                 </Form.Group>
 
@@ -145,7 +138,7 @@ export default function CadEvent() {
                                         name="detalhe"
                                         type="date"
                                         placeholder="Informe um título"
-                                        onChange={handlerDataChange}>
+                                        onChange={(e) => setData(e.target.value)}>
                                     </Form.Control>
                                 </Form.Group>
 
@@ -155,7 +148,7 @@ export default function CadEvent() {
                                         name=""
                                         type="time"
                                         placeholder="Informe um título"
-                                        onChange={handlerHoraChange} >
+                                        onChange={(e) => setHora(e.target.value)} >
                                     </Form.Control>
                                 </Form.Group>
 

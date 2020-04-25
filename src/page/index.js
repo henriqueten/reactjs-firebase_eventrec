@@ -16,6 +16,7 @@ export default function Main(){
       dispatch( {type: 'LOG_IN', usuarioEmail: email}
        )
     }
+    
 
     useEffect(() => {
         firebase.firestore().collection('eventos').get().then(async (resultado) => {
@@ -32,9 +33,9 @@ export default function Main(){
 
     return(
         <>
-      
+ 
         <div className="row p-3">
-         { eventos.map( item => <EventPost key={item.id}  id={item.id} img={item.foto} titulo={item.titulo} tipo={item.tipo} detalhes={item.detalhes} data={item.data} hora={item.hora} visualizacoes={item.visualizacoes} /> )  } 
+         { eventos.map( item => <EventPost key={item.id}  id={item.id} img={item.foto} titulo={item.titulo} tipo={item.tipo} detalhe={item.detalhe} data={item.data} hora={item.hora} visualizacoes={item.visualizacoes} /> )  } 
        </div>
         </>
     )
